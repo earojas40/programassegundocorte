@@ -1,0 +1,49 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package parcial2;
+
+/**
+ * //Nueva clase
+ * @author ERIKA
+ */
+import java.awt.BasicStroke;
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+
+public class Figuranueva implements Sprite {
+
+    private int width;
+    private int height;
+    private Color color;
+
+    /**
+     * Create a box that has dimensions width and height, filled with
+     * startColor.
+     */
+    public Figuranueva(int width, int height, Color color) {
+        this.width = width;
+        this.height = height;
+        this.color = color;
+    }
+
+    public void draw(Graphics surface, int x, int y) {
+        // Draw the object
+        surface.setColor(color);
+        surface.drawOval(x, y, width, height);
+        surface.setColor(Color.RED);
+        ((Graphics2D) surface).setStroke(new BasicStroke(3.0f));  
+        surface.drawOval(x, y, width, height);
+
+    }
+
+    public int getWidth() {
+        return width;
+    }
+
+    public int getHeight() {
+        return height;
+    }
+}
